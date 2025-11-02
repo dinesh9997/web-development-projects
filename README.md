@@ -9,7 +9,7 @@ Each project lives in its own folder and can be viewed live through the links be
 
 ## 🎬 Netflix Clone  
 
-> A front-end clone of the popular Netflix UI — built using **HTML**, **CSS**, and **JavaScript**.
+> A front-end clone of the popular Netflix UI — built using **HTML** & **CSS**.
 
 🌐 **Live Demo:**  
 [🔗 View Netflix Clone](https://dinesh9997.github.io/web-development-projects/Netflix-clone/)
@@ -20,7 +20,7 @@ Each project lives in its own folder and can be viewed live through the links be
 🛠️ **Tech Stack:**  
 - HTML5  
 - CSS3 (Flexbox & Grid)  
-- JavaScript (DOM Manipulation)
+
 
 🖼️ **Preview:**  
 ![Netflix Clone Preview](https://github.com/dinesh9997/web-development-projects/blob/main/Netflix-clone/preview.png?raw=true)
