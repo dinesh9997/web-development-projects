@@ -28,22 +28,11 @@ Each project lives in its own folder and can be viewed live through the links be
 ---
 
 
-Stay tuned for updates!
 
----
 
-## 📚 About This Repository  
-This repository is meant to:
-- Showcase my learning journey in **front-end development**
-- Experiment with new design ideas
-- Build real-world style UI clones and web utilities  
 
----
 
 ## 🧑‍💻 Author  
 **Dinesh Gujju**  
 📫 [GitHub Profile](https://github.com/dinesh9997)
 
----
-
-⭐ *If you like this repository, don’t forget to star it!*  
