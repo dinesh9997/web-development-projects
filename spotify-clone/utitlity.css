@@ -1,0 +1,17 @@
+.border{
+    border: 2px solid red;
+
+}
+.flex{
+    display: flex;
+
+}
+
+.items-center{
+    align-items: center;
+}
+
+
+.justify-center{
+    justify-content: center;
+}
