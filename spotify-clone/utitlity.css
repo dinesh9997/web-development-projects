@@ -1,9 +1,9 @@
-.border{
-    border: 2px solid red;
+.border{                                                  
 
+margin: 3px;
 }
 .flex{
-    display: flex;
+    display: flex;                        
 
 }
 
@@ -15,3 +15,21 @@
 .justify-center{
     justify-content: center;
 }
+
+.bg-black{
+    background-color: black;
+    color:black;
+}
+
+.invert{
+    filter: invert(1);
+}
+
+.bg-grey{
+    background-color: #121212;
+}
+
+.rounded{
+    border-radius: 8px;
+}
+
