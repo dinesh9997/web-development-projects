@@ -3,7 +3,7 @@
     margin: 0;
 }
 .left{
- padding: 34px;
+ padding: 10px;
     width: 25vw;
 }
 
@@ -18,4 +18,9 @@
     list-style: none;
     display: flex;
 gap: 3px;
+padding-top: 14px;
 }
+
+.home{
+}
+
