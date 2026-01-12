@@ -1,26 +1,79 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-.left{
- padding: 10px;
-    width: 25vw;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    background-color: black;
+    color: white
+    ;
 }
 
-.right{
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.left {
+    padding: 10px;
+    width: 25vw;
+    
+}
+
+.right {
     border: 2px solid red;
     width: 75vw;
     height: 50px;
 }
 
-.home ul li{
+.home ul li {
     width: 34px;
     list-style: none;
     display: flex;
-gap: 3px;
-padding-top: 14px;
+    gap: 15px;
+    font-weight: bold;
+    padding-top: 14px;
 }
 
-.home{
+.heading {
+    display: flex;
+    gap: 15px;
+    font-weight: bold;
+    font-size: 13px;
+    align-items: center;
+    padding: 23px 14px;
+    padding-top: 14px;
+
+
 }
 
+.heading img {
+    width: 30px;
+}
+
+.footer {
+    display: flex;
+    font-size: 10px;
+    color: grey;
+    gap: 13px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.footer a {
+    color: grey;
+}
+
+
+.library{
+    position: relative;
+    min-height: 80vh;
+}
+
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header > *{
+    padding: 20px;
+}
