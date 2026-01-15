@@ -18,9 +18,8 @@ body{
 }
 
 .right {
-    border: 2px solid red;
     width: 75vw;
-    height: 50px;
+margin: 16px 0;    
 }
 
 .home ul li {
@@ -72,8 +71,10 @@ body{
 .header{
     display: flex;
     justify-content: space-between;
+    background-color: rgb(34, 34, 34);
 }
 
 .header > *{
     padding: 20px;
+
 }
