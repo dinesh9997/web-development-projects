@@ -56,6 +56,7 @@ margin: 16px 0;
     gap: 13px;
     position: absolute;
     bottom: 0px;
+    padding: 10px 0;
 }
 
 .footer a {
@@ -89,7 +90,7 @@ margin: 16px 0;
 .cardcontainer{
     display: flex;
 margin: 30px;
-    gap: 10px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
@@ -111,6 +112,7 @@ padding-top: 5px;
     height: 220px;
 
     object-fit: cover;
+    object-position: 3px -15px;
 }
 .play {
     width: 32px;
@@ -122,6 +124,13 @@ padding-top: 5px;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 182px;
+    top: 230px;
     right: 17px;
+    opacity: 0;
+    transition:all 0.25s ease-in-out;
+}
+
+.card:hover .play{
+    transform: translateX(0vw) translateY(-6vh);
+    opacity: 1;
 }
