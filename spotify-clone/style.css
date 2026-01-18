@@ -177,7 +177,7 @@ font-size: 16px;
 .playbar{
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width:75%;
     background-color: rgb(6, 44, 6);
     padding: 12px;
   
