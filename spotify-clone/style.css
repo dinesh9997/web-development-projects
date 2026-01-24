@@ -178,14 +178,15 @@ font-size: 16px;
     position: absolute;
     bottom: 0;
     width:75%;
-    background-color: rgb(6, 44, 6);
+    background-color: rgb(36, 136, 36);
     padding: 12px;
+    
   
 }
 .songbuttons{
     display: flex;
     justify-content: center;
-    gap: 6px;  
+    gap: 16px;  
 }
 
 
