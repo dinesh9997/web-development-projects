@@ -191,5 +191,13 @@ font-size: 16px;
 
 
 
+.listsongs ul{
+    padding: 0px 42px;
+    
+}
 
+.listsongs ul li {    
+    list-style-type: decimal;   
+
+}
 
