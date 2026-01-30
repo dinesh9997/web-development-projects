@@ -39,10 +39,10 @@ async function main(){
         <img class="invert" src="/spotify-clone/icons/music.svg" alt="musicicon">
                 <div class="songinfo">
                     <div>${song.replaceAll("%20","")}</div>
-                    <div>~Dinesh</div>
+                    <div >~Dinesh</div>
                 </div>
-                <div class="playmusic" >
-                    <span>Play Now</span>
+                <div  class="playmusic" >
+                    <span style="color:white">Play Now</span>
                     <img class="invert" src="/spotify-clone/icons/playicon.svg" alt=""></div>
         
         
