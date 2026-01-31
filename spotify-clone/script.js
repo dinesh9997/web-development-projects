@@ -1,3 +1,7 @@
+let currentSong=new Audio();
+
+
+
 async function getSongs(){
 
     
@@ -14,25 +18,25 @@ async function getSongs(){
     }    
 
 }
-
-
-
  return songs
 }
-async function main(){
 
+
+
+const playMusic=(track)=>{
+currentSong.src=`/spotify-clone/songs/${track}`
+     currentSong.play()
+        play.src="/spotify-clone/icons/pause.svg"
+ }
+
+
+
+async function main(){
 
     let songs=await getSongs()
     console.log(songs)
-    // var x=9;
-
-    // var audio=new Audio(songs[x])
-    // audio.play()
-    // audio.addEventListener("loadeddata", () => {
-    //     let dur=audio.duration;
-    //     console.log(dur)
-    // })
-
+    
+    
     var songul=document.querySelector(".listsongs").getElementsByTagName("ul")[0];            
     for (const song of songs) {
         songul.innerHTML=songul.innerHTML+`<li>
@@ -49,6 +53,30 @@ async function main(){
         
         </li>`;
     }
+
+
+
+    Array.from(document.querySelector(".listsongs").getElementsByTagName("li")).forEach(e=>{
+      e.addEventListener("click",element=>{
+          console.log(e.querySelector(".songinfo").firstElementChild.innerHTML)
+          playMusic(e.querySelector(".songinfo").firstElementChild.innerHTML)
+
+      })
+  })
+
+
+   play.addEventListener("click",()=>{
+      if(currentSong.paused){
+        currentSong.play()
+        play.src="/spotify-clone/icons/pause.svg"
+      }
+      else{
+        currentSong.pause()
+        play.src="/spotify-clone/icons/playicon.svg"
+
+      }
+   })
+
 
 }
 

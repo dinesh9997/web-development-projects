@@ -250,4 +250,9 @@ color: #F9A602;
     background-color: black;
     position: relative;
     bottom: 11px;
+    left: 0px;
+}
+
+.songbuttons img{
+    cursor: pointer;
 }
