@@ -1,6 +1,13 @@
 let currentSong=new Audio();
 
+function formattime(seconds) {
+    if (isNaN(seconds) || seconds < 0) return "00:00";
 
+    let mins = Math.floor(seconds / 60);
+    let secs = Math.floor(seconds % 60);
+
+    return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+}
 
 async function getSongs(){
 
@@ -23,19 +30,34 @@ async function getSongs(){
 
 
 
-const playMusic=(track)=>{
+const playMusic=(track,pause)=>{
 currentSong.src=`/spotify-clone/songs/${track}`
-     currentSong.play()
-        play.src="/spotify-clone/icons/pause.svg"
+if(pause==true){
+    play.src="/spotify-clone/icons/playicon.svg"
+    pause=false
+currentSong.play()
+  
+document.getElementById("playersonginfo").innerHTML = track
+ document.querySelector(".songtime").innerHTML="00:00/00:00"
+
+}
+   else{     
+    currentSong.play()
+    play.src="/spotify-clone/icons/pause.svg"
+document.getElementById("playersonginfo").innerHTML = track
+ document.querySelector(".songtime").innerHTML="00:00/00:00"
+
  }
+ 
+    }
 
 
 
 async function main(){
 
     let songs=await getSongs()
-    console.log(songs)
     
+    playMusic(songs[0],true)    
     
     var songul=document.querySelector(".listsongs").getElementsByTagName("ul")[0];            
     for (const song of songs) {
@@ -76,7 +98,13 @@ async function main(){
 
       }
    })
+   
+   currentSong.addEventListener("timeupdate",()=>{
+console.log(currentSong.currentTime,currentSong.duration)
+document.querySelector(".songtime").innerHTML=`${formattime(currentSong.currentTime)}/${formattime(currentSong.duration)}`
 
+
+   })
 
 }
 
