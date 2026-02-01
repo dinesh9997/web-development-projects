@@ -100,13 +100,24 @@ async function main(){
    })
    
    currentSong.addEventListener("timeupdate",()=>{
-console.log(currentSong.currentTime,currentSong.duration)
+// console.log(currentSong.currentTime,currentSong.duration)
 document.querySelector(".songtime").innerHTML=`${formattime(currentSong.currentTime)}/${formattime(currentSong.duration)}`
-
+document.querySelector(".circle").style.left=(currentSong.currentTime/currentSong.duration)*100 +"%"
 
    })
 
+
+   document.querySelector(".seekbar").addEventListener("click",(e)=>{
+    let percent=(e.offsetX/e.target.getBoundingClientRect().width)*100;          //getBoundingClientRect():get the position and size of an HTML element on the screen.
+       document.querySelector(".circle").style.left=percent+"%";
+       currentSong.currentTime=((currentSong.duration)*percent)/100;    
+
+   })
+
+
 }
+
+
 
 
 main()

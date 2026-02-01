@@ -241,16 +241,19 @@ color: #F9A602;
     width: 98%;
     position: absolute;
     bottom: 0;
-    height: 0px;
+    height: 4px;
+    background-color: red;
+    cursor: pointer;
 }
 .circle{
-    height: 20px;
-    width: 20px;
+    height: 15px;
+    width: 15px;
     border-radius: 32px;
     background-color: black;
     position: relative;
-    bottom: 11px;
-    left: 0px;
+    bottom: 8px;
+    left: 0%;
+    transition: left 0.7s;
 }
 
 .songbuttons img{
