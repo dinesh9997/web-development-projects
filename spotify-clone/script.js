@@ -33,7 +33,7 @@ async function getSongs(){
 const playMusic=(track,pause)=>{
 currentSong.src=`/spotify-clone/songs/${track}`
 if(pause==true){
-    play.src="/spotify-clone/icons/playicon.svg"
+    play.src="icons/playicon.svg"
     pause=false
 currentSong.play()
   
@@ -43,7 +43,7 @@ document.getElementById("playersonginfo").innerHTML = track
 }
    else{     
     currentSong.play()
-    play.src="/spotify-clone/icons/pause.svg"
+    play.src="icons/pause.svg"
 document.getElementById("playersonginfo").innerHTML = track
  document.querySelector(".songtime").innerHTML="00:00/00:00"
 
@@ -62,14 +62,14 @@ async function main(){
     var songul=document.querySelector(".listsongs").getElementsByTagName("ul")[0];            
     for (const song of songs) {
         songul.innerHTML=songul.innerHTML+`<li>
-        <img class="invert" src="/spotify-clone/icons/music.svg" alt="musicicon">
+        <img class="invert" src="icons/music.svg" alt="musicicon">
                 <div class="songinfo">
                     <div>${song.replaceAll("%20","")}</div>
                     <div >~Dinesh</div>
                 </div>
                 <div  class="playmusic" >
                     <span style="color:white">Play Now</span>
-                    <img class="invert" src="/spotify-clone/icons/playicon.svg" alt=""></div>
+                    <img class="invert" src="icons/playicon.svg" alt=""></div>
         
         
         
@@ -90,11 +90,11 @@ async function main(){
    play.addEventListener("click",()=>{
       if(currentSong.paused){
         currentSong.play()
-        play.src="/spotify-clone/icons/pause.svg"
+        play.src="icons/pause.svg"
       }
       else{
         currentSong.pause()
-        play.src="/spotify-clone/icons/playicon.svg"
+        play.src="icons/playicon.svg"
 
       }
    })
