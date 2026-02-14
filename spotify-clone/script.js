@@ -11,6 +11,8 @@ function formattime(seconds) {
 
 async function getSongs(){
 
+
+
     
     let a= await fetch("http://127.0.0.1:5500/spotify-clone/songs/")
     let response=await a.text()
@@ -31,7 +33,7 @@ async function getSongs(){
 
 
 const playMusic=(track,pause)=>{
-currentSong.src=`/spotify-clone/songs/${track}`
+currentSong.src=`songs/${track}`
 if(pause==true){
     play.src="icons/playicon.svg"
     pause=false
