@@ -119,6 +119,17 @@ document.querySelector(".circle").style.left=(currentSong.currentTime/currentSon
 
 }
 
+  document.querySelector(".hamburger").addEventListener("click",(e)=>{
+
+   document.querySelector(".left").style.left="0"
+
+  })
+   
+  document.querySelector(".cross img").addEventListener("click",(e)=>{
+
+   document.querySelector(".left").style.left="-120%"
+
+  })
 
 
 
