@@ -132,13 +132,24 @@ document.querySelector(".circle").style.left=(currentSong.currentTime/currentSon
   })
 
   prev.addEventListener("click",()=>{
-       console.log(currentSong.src);
+    let index=songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+    if(index-1>=0){
+          playMusic(songs[index-1])
+    }
+    else{
+        playMusic(songs[songs.length-1])
+    }
          
 })
 
   next.addEventListener("click",()=>{
-    console.log(currentSong.src.split("/").slice(-1)[0]);
-    console.log(songs);
+    let index=songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+    if(index+1>=songs.length){
+          playMusic(songs[0])
+    }
+    else{
+        playMusic(songs[index+1])
+    }
     
   })
 
