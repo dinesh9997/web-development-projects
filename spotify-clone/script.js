@@ -1,5 +1,5 @@
 let currentSong=new Audio();
-
+let songs;
 function formattime(seconds) {
     if (isNaN(seconds) || seconds < 0) return "00:00";
 
@@ -57,7 +57,7 @@ document.getElementById("playersonginfo").innerHTML = track
 
 async function main(){
 
-    let songs=await getSongs()
+     songs=await getSongs()
     
     playMusic(songs[0],true)    
     
@@ -129,6 +129,17 @@ document.querySelector(".circle").style.left=(currentSong.currentTime/currentSon
 
    document.querySelector(".left").style.left="-120%"
 
+  })
+
+  prev.addEventListener("click",()=>{
+       console.log(currentSong.src);
+         
+})
+
+  next.addEventListener("click",()=>{
+    console.log(currentSong.src.split("/").slice(-1)[0]);
+    console.log(songs);
+    
   })
 
 
