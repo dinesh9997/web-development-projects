@@ -118,7 +118,7 @@ document.querySelector(".circle").style.left=(currentSong.currentTime/currentSon
    })
 
 
-}
+
 
   document.querySelector(".hamburger").addEventListener("click",(e)=>{
 
@@ -154,6 +154,10 @@ document.querySelector(".circle").style.left=(currentSong.currentTime/currentSon
     
   })
 
+  document.querySelector(".volume").getElementsByTagName("input")[0].addEventListener("input",(e)=>{
+      currentSong.volume=e.target.value/100;
 
+  })
+}
 
 main()
