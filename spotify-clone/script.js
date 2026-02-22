@@ -59,8 +59,9 @@ async function main(){
 
      songs=await getSongs()
     
-    playMusic(songs[0],true)    
-    
+    currentSong.src = `songs/${songs[0]}`
+document.getElementById("playersonginfo").innerHTML = songs[0]
+document.querySelector(".songtime").innerHTML = "00:00/00:00"
     var songul=document.querySelector(".listsongs").getElementsByTagName("ul")[0];            
     for (const song of songs) {
         songul.innerHTML=songul.innerHTML+`<li>

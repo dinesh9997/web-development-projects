@@ -232,6 +232,9 @@ color: #F9A602;
     font-size: 14px;
     width: 344px;
 }
+.info div{
+    word-break: break-all;
+}
 
 .listsongs{
     height: 443px;
@@ -306,6 +309,28 @@ gap: 30px;
     width:34px;
 }
 
+
+.listsongs .songinfo{
+    font-size: 14px;
+    flex: 1;              /* allow shrinking */
+    min-width: 0;         /* VERY IMPORTANT for flex ellipsis */
+}
+
+.listsongs .songinfo div:first-child{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.timevol{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+
+}
+
+
 @media (max-width:1400px){
       .left{
         background-color: black;
@@ -314,6 +339,7 @@ gap: 30px;
         transition: all .3s;
         z-index: 1;
         width: 373px;
+        padding: 0;
       }
  .cross{
       position: absolute;
@@ -335,7 +361,12 @@ gap: 30px;
     font-size: 12px;
 }
 .hamburger{
-    display:block; 
+    display:block;
+    cursor: pointer; 
+}
+
+.cross{
+    cursor: pointer;
 }
 
 .card{
