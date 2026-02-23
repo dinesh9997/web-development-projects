@@ -9,12 +9,12 @@ function formattime(seconds) {
     return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
 }
 
-async function getSongs(){
+async function getSongs(folder){
 
 
 
     
-    let a= await fetch("http://127.0.0.1:5500/spotify-clone/songs/")
+    let a= await fetch(`http://127.0.0.1:5500/spotify-clone/${folder}`)
     let response=await a.text()
     let div=document.createElement("div")
    div.innerHTML=response
@@ -23,7 +23,7 @@ async function getSongs(){
  for (let index = 0; index < as.length; index++) {
     const element = as[index];
     if(element.href.endsWith("mp3")){
-        songs.push(element.href.split("/songs/")[1])
+        songs.push(element.href.split(`/${folder}/`)[1])
     }    
 
 }
@@ -33,7 +33,7 @@ async function getSongs(){
 
 
 const playMusic=(track,pause)=>{
-currentSong.src=`songs/${track}`
+currentSong.src=`/${folder}/`+track
 if(pause==true){
     play.src="icons/playicon.svg"
     pause=false
@@ -156,6 +156,13 @@ document.querySelector(".circle").style.left=(currentSong.currentTime/currentSon
 
   document.querySelector(".volume").getElementsByTagName("input")[0].addEventListener("input",(e)=>{
       currentSong.volume=e.target.value/100;
+      if(currentSong.volume==0){
+          document.querySelector(".volume").getElementsByTagName("img")[0].src="icons/volumemute.svg"
+      }
+      else{
+        document.querySelector(".volume").getElementsByTagName("img")[0].src="icons/volume.svg"
+      }
+
 
   })
 }
