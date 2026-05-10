@@ -1,5 +1,6 @@
 let currentSong=new Audio();
 let songs;
+let currFolder;
 function formattime(seconds) {
     if (isNaN(seconds) || seconds < 0) return "00:00";
 
@@ -12,8 +13,9 @@ function formattime(seconds) {
 async function getSongs(folder){
 
 
-
     
+    // let a= await fetch(`http://127.0.0.1:5500/spotify-clone/songs`)
+     currFolder=folder;
     let a= await fetch(`http://127.0.0.1:5500/spotify-clone/${folder}`)
     let response=await a.text()
     let div=document.createElement("div")
@@ -24,6 +26,8 @@ async function getSongs(folder){
     const element = as[index];
     if(element.href.endsWith("mp3")){
         songs.push(element.href.split(`/${folder}/`)[1])
+        // songs.push(element.href.split(`/songs/`)[1])
+
     }    
 
 }
@@ -33,7 +37,9 @@ async function getSongs(folder){
 
 
 const playMusic=(track,pause)=>{
-currentSong.src=`/${folder}/`+track
+currentSong.src=`/${currFolder}/`+track
+// currentSong.src=`/songs/`+track
+
 if(pause==true){
     play.src="icons/playicon.svg"
     pause=false
@@ -57,9 +63,10 @@ document.getElementById("playersonginfo").innerHTML = track
 
 async function main(){
 
-     songs=await getSongs()
+     songs=await getSongs("songs/ncs")
     
-    currentSong.src = `songs/${songs[0]}`
+    // currentSong.src = `songs/${songs[0]}`
+    currentSong.src = `/${currFolder}/` + songs[0]
 document.getElementById("playersonginfo").innerHTML = songs[0]
 document.querySelector(".songtime").innerHTML = "00:00/00:00"
     var songul=document.querySelector(".listsongs").getElementsByTagName("ul")[0];            
@@ -165,6 +172,10 @@ document.querySelector(".circle").style.left=(currentSong.currentTime/currentSon
 
 
   })
+
+  //load playlist whenever it is clicked
+
+  
 }
 
 main()
