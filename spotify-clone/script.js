@@ -90,23 +90,55 @@ const playMusic = (track, pause) => {
 
 
 async function displayAlbums() {
-    console.log('display playlist');
-    
-   let a = await fetch(`/web-development-projects/spotify-clone/songs/`)
+
+
+    let a = await fetch(`/web-development-projects/spotify-clone/songs/`)
     let response = await a.text()
     let div = document.createElement("div")
     div.innerHTML = response
-    let anchors=div.getElementsByTagName("a")
-   Array.from(anchors).forEach(e=>{
-
-
-    if(e.href.includes("/songs")){
-        let folder=e.href.split("/").slice(-2)[1];
-        
-    }
-   })
+    let anchors = div.getElementsByTagName("a")
+    let array=Array.from(anchors)
+    let cardcontainer=document.querySelector(".cardcontainer")
+for (let index = 0; index < array.length; index++) {
+    const e = array[index];
+    
 
     
+        if (e.href.includes("/songs/")) {
+            let folder = e.href.split("/").slice(-2)[1];
+            console.log(folder);
+
+            let a = await fetch(`/web-development-projects/spotify-clone/songs/${folder}/info.json`)
+            let response = await a.json()
+            console.log(response);
+            cardcontainer.innerHTML = cardcontainer.innerHTML + ` <div class="card" data-folder="ncs">
+                        <div class="play">
+                            <svg width='16' height='16' viewbox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 20V4L19 12L5 20Z" fill="#000" stroke="#141B34" stroke-width="1.5"
+                                    stroke-linejoin="round">
+                            </svg>
+                        </div>
+
+                        <img src="songs/${folder}/cover.jfif" alt="">
+                        <h2>${response.title}</h2>
+                        <p>${response.description}</p>
+
+                    </div>`
+
+        }
+    }
+
+
+    //load playlist whenever it is clicked
+  Array.from(document.getElementsByClassName("card")).forEach((e) => {
+        e.addEventListener("click", async item => {
+            console.log(item.currentTarget.dataset);
+
+            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
+        })
+    })
+
 }
 
 async function main() {
@@ -199,14 +231,22 @@ async function main() {
 
     })
 
-    //load playlist whenever it is clicked
-    Array.from(document.getElementsByClassName("card")).forEach((e) => {
-        e.addEventListener("click", async item => {
-            console.log(item.currentTarget.dataset);
+    // adding eent listenere for mute the music
+  document.querySelector(".volume>img").addEventListener("click",(e)=>{
+console.log(e.target);
+if(e.target.src.includes("icons/volume.svg")){
+    e.target.src=e.target.src.replace("icons/volume.svg","icons/volumemute.svg")
+    currentSong.volume=0;
+    document.querySelector(".volume").getElementsByTagName("input")[0].value=0;
+}
+else{
+     e.target.src=e.target.src.replace("icons/volumemute.svg","icons/volume.svg")
+     currentSong.volume=0.1;
+     document.querySelector(".volume").getElementsByTagName("input")[0].value=10;
+}
+  
 
-            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
-        })
-    })
+  })
 
 }
 

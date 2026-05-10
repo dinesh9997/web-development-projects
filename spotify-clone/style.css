@@ -339,8 +339,11 @@ gap: 20px;
     align-items: center;
     justify-content: center;
     gap: 2px;
+    cursor: pointer;
 }
-
+.range input{
+    cursor: pointer;
+}
 
 @media (max-width:1200px){
       .left{
