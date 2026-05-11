@@ -1,20 +1,21 @@
 const express = require("express");
-const serveIndex = require("serve-index");
 const path = require("path");
+const serveIndex = require("serve-index");
 
 const app = express();
+const PORT = process.env.PORT || 10000;
 
-app.use(express.static(path.join(__dirname, "spotify-clone")));
+// Serve static files
+app.use(express.static(__dirname));
 
-app.use(
-  "/songs",
-  serveIndex(path.join(__dirname, "spotify-clone/songs"), {
-    icons: true,
-  })
-);
+// Enable folder listing for songs
+app.use("/songs", serveIndex(path.join(__dirname, "songs"), { icons: true }));
 
-const PORT = process.env.PORT || 3000;
+// Open index.html on home route
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
