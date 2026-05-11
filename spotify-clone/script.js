@@ -17,7 +17,7 @@ async function getSongs(folder) {
     // let a= await fetch(`http://127.0.0.1:5500/spotify-clone/songs`)
     currFolder = folder;
     // let a = await fetch(`/web-development-projects/spotify-clone/${folder}`)
-    let a = await fetch(`/spotify-clone/${folder}`)
+    let a = await fetch(`./${folder}`)
 
     let response = await a.text()
     let div = document.createElement("div")
@@ -69,7 +69,7 @@ async function getSongs(folder) {
 const playMusic = (track, pause) => {
     // currentSong.src = `/${currFolder}/` + track
     // currentSong.src = `/web-development-projects/spotify-clone/${currFolder}/` + track
-    currentSong.src = `/spotify-clone/${currFolder}/` + track
+    currentSong.src = `./${currFolder}/` + track
 
     
 
@@ -99,7 +99,7 @@ async function displayAlbums() {
 
 
     // let a = await fetch(`/web-development-projects/spotify-clone/songs/`)
-    let a = await fetch(`/spotify-clone/songs/`)
+    let a = await fetch(`./songs/`)
 
     let response = await a.text()
     let div = document.createElement("div")
@@ -117,7 +117,7 @@ for (let index = 0; index < array.length; index++) {
             console.log(folder);
 
             // let a = await fetch(`/web-development-projects/spotify-clone/songs/${folder}/info.json`)
-            let a = await fetch(`/spotify-clone/songs/${folder}/info.json`)
+            let a = await fetch(`./songs/${folder}/info.json`)
 
             let response = await a.json()
             console.log(response);
@@ -158,7 +158,7 @@ async function main() {
 
     // currentSong.src = `songs/${songs[0]}`
     // currentSong.src = `/web-development-projects/spotify-clone/${currFolder}/` + songs[0]
-    currentSong.src = `/spotify-clone/${currFolder}/` + songs[0]
+    currentSong.src = `./${currFolder}/` + songs[0]
 
     document.getElementById("playersonginfo").innerHTML = songs[0]
     document.querySelector(".songtime").innerHTML = "00:00/00:00"
