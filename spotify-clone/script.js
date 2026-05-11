@@ -16,7 +16,9 @@ async function getSongs(folder) {
 
     // let a= await fetch(`http://127.0.0.1:5500/spotify-clone/songs`)
     currFolder = folder;
-    let a = await fetch(`/web-development-projects/spotify-clone/${folder}`)
+    // let a = await fetch(`/web-development-projects/spotify-clone/${folder}`)
+    let a = await fetch(`/spotify-clone/${folder}`)
+
     let response = await a.text()
     let div = document.createElement("div")
     div.innerHTML = response
@@ -58,14 +60,18 @@ async function getSongs(folder) {
 
         })
     })
+
+    return songs
 }
 
 
 
 const playMusic = (track, pause) => {
     // currentSong.src = `/${currFolder}/` + track
-    currentSong.src = `/web-development-projects/spotify-clone/${currFolder}/` + track
-    // currentSong.src=`/songs/`+track
+    // currentSong.src = `/web-development-projects/spotify-clone/${currFolder}/` + track
+    currentSong.src = `/spotify-clone/${currFolder}/` + track
+
+    
 
     if (pause == true) {
         play.src = "icons/playicon.svg"
@@ -92,7 +98,9 @@ const playMusic = (track, pause) => {
 async function displayAlbums() {
 
 
-    let a = await fetch(`/web-development-projects/spotify-clone/songs/`)
+    // let a = await fetch(`/web-development-projects/spotify-clone/songs/`)
+    let a = await fetch(`/spotify-clone/songs/`)
+
     let response = await a.text()
     let div = document.createElement("div")
     div.innerHTML = response
@@ -108,10 +116,12 @@ for (let index = 0; index < array.length; index++) {
             let folder = e.href.split("/").slice(-2)[1];
             console.log(folder);
 
-            let a = await fetch(`/web-development-projects/spotify-clone/songs/${folder}/info.json`)
+            // let a = await fetch(`/web-development-projects/spotify-clone/songs/${folder}/info.json`)
+            let a = await fetch(`/spotify-clone/songs/${folder}/info.json`)
+
             let response = await a.json()
             console.log(response);
-            cardcontainer.innerHTML = cardcontainer.innerHTML + ` <div class="card" data-folder="ncs">
+            cardcontainer.innerHTML = cardcontainer.innerHTML + ` <div class="card" data-folder="${folder}">
                         <div class="play">
                             <svg width='16' height='16' viewbox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -136,6 +146,7 @@ for (let index = 0; index < array.length; index++) {
             console.log(item.currentTarget.dataset);
 
             songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
+            playMusic(songs[0])
         })
     })
 
@@ -146,7 +157,9 @@ async function main() {
     await getSongs("songs/ncs")
 
     // currentSong.src = `songs/${songs[0]}`
-    currentSong.src = `/web-development-projects/spotify-clone/${currFolder}/` + songs[0]
+    // currentSong.src = `/web-development-projects/spotify-clone/${currFolder}/` + songs[0]
+    currentSong.src = `/spotify-clone/${currFolder}/` + songs[0]
+
     document.getElementById("playersonginfo").innerHTML = songs[0]
     document.querySelector(".songtime").innerHTML = "00:00/00:00"
 
