@@ -48,25 +48,6 @@ The project demonstrates:
 
 ---
 
-## 📁 Project Structure
-
-```bash
-spotify-clone/
-│
-├── assets/
-├── icons/
-├── songs/
-│   ├── ncs/
-│   └── cs/
-│
-├── index.html
-├── style.css
-├── script.js
-├── server.js
-└── package.json
-
----
-
 ## 🚀 Deployment
 
 The project is deployed using:
@@ -82,3 +63,4 @@ https://spotify-clone2-kxb3.onrender.com/
 
 **G Dinesh**  
 B.Tech – Computer Science (Artificial Intelligence)
+
