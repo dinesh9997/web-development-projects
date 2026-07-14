@@ -27,16 +27,16 @@ function App() {
 
 
   const handleDelete = (e, id) => {
-    console.log(`The id is ${id}`)
+  
+    let newTodos = todos.filter(item=>{
+      return item.id!==id
+    });
+    setTodos(newTodos)
+
   }
 
-  const handleEdit = () => {
-    let index = todos.findIndex(item => {
-      return item.id === id;
-    })
-    let newTodos = [...todos];
-    newTodos[index].isCompleted = !newTodos[index].isCompleted;
-    setTodos(newTodos)
+  const handleEdit = (e,id) => {
+    
 
 
   }
@@ -54,10 +54,11 @@ function App() {
         <div className="addTodo">
           <h2 className='text-lg font-bold'>Add todo</h2>
           <input onChange={handleChange} value={todo} className='  bg-amber-200 w-1/2' type="text" />
-          <button onClick={handleAdd} className='cursor-pointer border bg-red-400 hover: border-b-emerald-500 hover:bg-emerald-400  rounded-3xl hover:text-white m-3 h-7 w-15'>Add</button>
+          <button onClick={handleAdd} className='cursor-pointer border bg-red-400 hover: border-b-emerald-500 hover:bg-emerald-400  rounded-3xl hover:text-white m-3 h-7 w-15'>Save</button>
         </div>
         <h2 className='text-lg font-bold'>Your Todos</h2>
         <div className="todos">
+          {todos.length===0 && <div className='m-5 '> No Todos to Display </div> }
           {todos.map((item) => {
             /*here serach "uuid npm" where this pakage is used for asigning unique ids to eah todo so that fo that todo by their id w an perfor our taks
             terminal run: npm run uuid
@@ -68,8 +69,8 @@ function App() {
               <input name={item.id} onChange={handleCheckbox} type="checkbox" value={item.isCompleted} id="" />
               <div className={item.isCompleted ? "line-through" : ""} >{item.todo}</div>
               <div className="buttons ">
-                <button onClick={handleEdit} className='cursor-pointer bg-violet-700 hover:bg-violet-900  text-sm hover:font-bold p-2 py-1 text-white rounded-md mx-1'>Edit </button>
-                <button onClick={(e) => { handleDelete(item.id) }} className='cursor-pointer bg-violet-700 hover:bg-violet-900  text-sm hover:font-bold p-2 py-1 text-white rounded-md mx-1' >Delete</button>
+                <button onClick={(e)=> handleEdit(e,item.id)} className='cursor-pointer bg-violet-700 hover:bg-violet-900  text-sm hover:font-bold p-2 py-1 text-white rounded-md mx-1'>Edit </button>
+                <button onClick={(e) => { handleDelete(e,item.id) }} className='cursor-pointer bg-violet-700 hover:bg-violet-900  text-sm hover:font-bold p-2 py-1 text-white rounded-md mx-1' >Delete</button>
 
               </div>
 
