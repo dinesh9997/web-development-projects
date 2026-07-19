@@ -1,8 +1,5 @@
 # 🚀 Modern Web Development Projects Portfolio
 
-[![Live Todo App](https://img.shields.io/badge/iTask_Live-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://todo-list-dinesh.vercel.app/)
-[![Live Spotify App](https://img.shields.io/badge/Spotify_Live-Render-1DB954?style=for-the-badge&logo=spotify&logoColor=white)](https://spotify-clone2-kxb3.onrender.com/)
-[![Live Netflix App](https://img.shields.io/badge/Netflix_Live-GitHub_Pages-E50914?style=for-the-badge&logo=netflix&logoColor=white)](https://dinesh9997.github.io/web-development-projects/Netflix-clone/)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
 Welcome to the ultimate web development repository by **G Dinesh**! This repository serves as a professional showcase of frontend and full-stack engineering excellence, featuring production-ready web applications, interactive web tools, and high-fidelity clones of industry-leading applications like **Spotify** and **Netflix**.
