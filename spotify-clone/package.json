@@ -6,7 +6,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.22.2",
+    "express": "^4.22.3",
     "serve-index": "^1.9.1"
   },
   "description": "A beautiful, high-fidelity responsive clone of the Spotify Web Player tailored to play **iconic, nostalgic cartoon and anime theme soundtracks** from childhood.",
