@@ -1,4 +1,4 @@
-# 🎵 Spotify Nostalgia Player: Full-Stack Web App
+# 🎵 NostalgiaTunes: Where Childhood Memories Become Music.
 
 A beautiful, high-fidelity responsive clone of the Spotify Web Player tailored to play **iconic, nostalgic cartoon and anime theme soundtracks** from childhood. 
 
@@ -9,7 +9,7 @@ This full-stack project is designed using semantic **HTML5, custom CSS3 properti
 ## 🌐 Live Deployment & Preview
 
 🚀 **Experience the Live Application:**  
-👉 **[Spotify Nostalgia Player Live Stream Demo](https://spotify-clone2-kxb3.onrender.com/)**
+👉 **[NostalgiaTunes Live Stream Demo](https://spotify-clone2-kxb3.onrender.com/)**
 
 ---
 
